@@ -1,0 +1,483 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HaoHan Huang</title>
+    <link rel="icon" href="{% static 'resume/images/3.jpg' %}" type="image/x-icon">
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{% static 'resume/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'resume/css/font-awesome.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static 'resume/css/chocolat.css' %}" type="text/css" media="screen"><!-- chocolate css for gallery light box-->
+<!-- animation -->
+<link href="{% static 'resume/css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- //animation -->
+<link href="{% static 'resume/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<script src="{% static 'resume/js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'resume/js/bootstrap.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- onlinefonts -->
+<link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+<!-- //onlinefonts -->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+		<!-- header -->
+		<div class="header-w3layouts">
+			<!-- Navigation -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Vitae</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a class="navbar-brand" href="index.html" style="font-size: 50%;">个人博客</a></h1>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+							<li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
+							<li><a class="page-scroll scroll active" href="#home">首 页</a></li>
+							<li><a class="page-scroll scroll" href="#about">简 介</a></li>
+							<li><a class="page-scroll scroll" href="#port">项目预览</a></li>
+							<li><a class="page-scroll scroll" href="#edu">工作经历</a></li>
+							<li><a class="page-scroll scroll" href="#exp">公司名称</a></li>
+							<li><a class="page-scroll scroll" href="#contact">联 系</a></li>
+                            <li><a class="page-scroll scroll" href="#essays">随 笔</a></li>
+                            <li><a class="page-scroll scroll" href="#readbook">阅 读</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			</nav>
+		</div>
+		<!-- //header -->
+		<div class="header jarallax" id="home">
+			<div class="container">
+				<div class="banner-text text-center">
+					<h2>I am HaoRan Haung</h2>
+					<h3> - Personal Blog - </h3>
+					<p>Only unsuccessful people, there is no unsuccessful thing! </p>
+					<div class="w3l-button banner-btn">
+							<a href="#" onclick="window.location.href='/down_file1'">Download CV</a>
+					</div>
+				</div>
+				<div class="w3-arrow bounce animated">
+				<a href="#about" class="scroll"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+			</div>
+			</div>
+
+		</div>
+
+	<div class="about" id="about">
+		<div class="container">
+				<h3 class="w3l-heading">简 介</h3>
+			<div class="col-md-4 w3-about-top"> 
+				<img src="{% static 'resume/images/3.jpg' %}" class="img-responsive" alt="about-img"/>
+			</div>
+			<div class="col-md-8 w3l-about">
+					<div class="w3ls-heading">
+						<h2>我是一个python爬虫/全栈开发工程师，比较喜欢具有挑战性的技术，对人工智能/算法有浓厚的兴趣，希望成为一个全方面的人才！</h2>
+					</div>
+					<div class="w3ls-about-info">
+						<p>我是一名16年毕业的应届本科生，本人大学本科专业为音乐学，由于对计算机有浓厚的兴趣，在大学期间选修计算机课程，对C语言有一定的了解，2016年毕业之后，由于校招的原因，进入了一家培训机构系统的学习python人工智能，本人熟练使用各种python库，精通python基础、高级编程、web全栈，熟练爬取主流网站的数据信息，对机器学习算法有一定的了解；</p>
+					</div>
+					<div class="w3l-button">
+						<a href="#" data-toggle="modal" data-target="#myModal">个人资料</a>
+					</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+	</div>
+	<!-- modal -->
+	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Vitae</h4>
+				</div>
+				<div class="modal-body">
+					<div class="about">
+						<div class="col-md-4 col-sm-4  col-xs-4 about-left ">
+							<img src="{% static '/resume/images/3.jpg' %}" class="img-responsive" alt=""/>
+						</div>
+						<div class="col-md-8 col-sm-8 col-xs-8 about-right wthree">
+							<h3>Hi, i'm <span>HaoRan Huang </span></h3>
+							<h4>Web 全栈 & 爬虫工程师 </h4>
+							<ul class="address">
+								<li>
+									<ul class="agileits-address-text ">
+										<li><b>生日</b></li>
+										<li>1992-02-03</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>电话 </b></li>
+										<li>+86 15978554102</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>户籍地 </b></li>
+										<li>河南省信阳市浉河区</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>邮箱 </b></li>
+										<li><a href="mailto:example@mail.com"> hhrsain@sina.com</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>网站 </b></li>
+										<li><a href="#">www.cssmoban.com</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- //modal -->
+	<!-- Portfolio -->
+       <div class="portfolio" id="port">
+		       <div class="port-head">
+							<h3 class="w3l-heading">项目预览</h3>
+						</div>
+            <ul class="simplefilter">
+                <li class="active" data-filter="all">All</li>
+                <li data-filter="1">web</li>
+                <li data-filter="2">The crawler</li>
+                <li data-filter="3">AI</li>
+            </ul>
+
+            <div class="filtr-container">
+                <div class="  filtr-item gallery-t" data-category="1, 3" data-sort="Busy streets">
+				 <a href="{% static 'resume/images/b.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/b.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+                </div>
+				<div class=" filtr-item" data-category="1, 3" data-sort="City wonders">
+                    <a href="{% static 'resume/images/d.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/d.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+
+                </div>
+				<div class=" filtr-item" data-category="2" data-sort="Luminous night">
+                   <a href="{% static 'resume/images/c.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/c.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+                </div>
+                <div class="  filtr-item gallery-t" data-category="1, 3" data-sort="Busy streets">
+				 <a href="{% static 'resume/images/b.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/b.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+                </div>
+                <div class="  filtr-item" data-category="3" data-sort="In production">
+                   <a href="{% static 'resume/images/e.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/e.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+
+                </div>
+                <div class=" filtr-item" data-category="3, 2" data-sort="Industrial site">
+                  <a href="{% static 'resume/images/g.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/g.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+                </div>
+                <div class=" filtr-item" data-category="2, 3" data-sort="Peaceful lake">
+                    <a href="{% static 'resume/images/f.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/f.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+					</a>
+                </div>
+                 <div class="  filtr-item gallery-t" data-category="1, 3" data-sort="Busy streets">
+				 <a href="{% static 'resume/images/b.jpg' %}" class="b-link-stripe b-animate-go  thickbox">
+
+					<figure class="w3ls-gallery">
+					 <img src="{% static 'resume/images/b.jpg' %}" class="img-responsive" alt=" " />	<figcaption class="w3layouts-caption">
+							<h3>my designs</h3>
+
+						</figcaption>
+					</figure>
+				</a>
+                </div>
+               <div class="clearfix"> </div>
+	        </div>
+		 </div>
+<!-- //Portfolio -->
+<div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >建站模板</a></div>
+<!--Education-->
+	<div id="edu" class="agile-edu">
+		<div class="container">
+				<h3 class="w3l-heading">工作经历</h3>
+			<div class="work-info">
+				<div class="col-md-6 col-sm-6 col-xs-6 work-right work-right2">
+				</div>
+				<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2">
+					<div class="col-md-6  col-sm-6 col-xs-6  work1">
+						<h4>2018.11 --- 至今</h4>
+						<p>web全栈 & 网络爬虫<br><br><br></p></div>
+					<div class="col-md-6  col-sm-6 col-xs-6  work2">
+						<h5> 上海砸立电子商务有限公司</h5>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="work-info">
+				<div class="col-md-6  col-sm-6 col-xs-6">
+				</div>
+				<div class="col-md-6  col-sm-6 col-xs-6  work-right">
+					<div class="col-md-6  col-sm-6 col-xs-6 work2">
+						<span></span>
+						<h5>郑州信盈达电子科技有限公司</h5>
+					</div>
+					<div class="col-md-6  col-sm-6 col-xs-6  work-right1">
+						<h4>2017.4 --- 2018.10</h4>
+						<p>python后台开发 & 网络爬虫<br><br><br></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+{#			<div class="work-sec-2">#}
+{#			<div class="work-info">#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6  work-right work-right2">#}
+{#				</div>#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2 ">#}
+{#					<div class="col-md-6 col-sm-6 col-xs-6  work1">#}
+{#						<h4>Lorem ipsum</h4>#}
+{#						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>#}
+{#					<div class="col-md-6  col-sm-6 col-xs-6  work2">#}
+{#						<h5> University</h5>#}
+{#						<span></span>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#			<div class="work-info">#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6 ">#}
+{#				</div>#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6  work-right">#}
+{#					<div class="col-md-6  col-sm-6 col-xs-6  work2">#}
+{#						<span></span>#}
+{#						<h5>University</h5>#}
+{#					</div>#}
+{#					<div class="col-md-6 col-sm-6 col-xs-6  work-right1">#}
+{#						<h4>Lorem ipsum</h4>#}
+{#						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p> </div>#}
+{#				</div>#}
+{#				<div class="clearfix"> </div>#}
+{#			</div>#}
+{#			<span class="edu-circle"></span>#}
+{#			</div>#}
+		</div>
+	</div>
+<!--//Education-->
+<div class="agile-border">
+	<span></span>
+</div>
+<!-- work-experience-->
+	<div id="exp" class="agile-edu exp">
+		<div class="container">
+				<h3 class="w3l-heading">公司名称</h3>
+			<div class="work-info">
+				<div class="col-md-6  col-sm-6 col-xs-6  work-right work-right2">
+				</div>
+				<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2">
+					<div class="col-md-6  col-sm-6 col-xs-6  work1">
+						<h4>简 介</h4>
+						<p>公司成立于2015年，致力于引领中国潮流市场，在中国潮流市场具有较强的竞争力，公司规模150-200人；<br><br></p></div>
+					<div class="col-md-6  col-sm-6 col-xs-6 work2">
+						<h5> 上海砸立电子商务有限公司</h5>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<div class="work-info">
+				<div class="col-md-6  col-sm-6 col-xs-6 ">
+				</div>
+				<div class="col-md-6  col-sm-6 col-xs-6 work-right">
+					<div class="col-md-6 col-sm-6 col-xs-6 work2">
+						<span></span>
+						<h5>郑州信盈达电子科技有限公司</h5>
+					</div>
+					<div class="col-md-6  col-sm-6 col-xs-6 work-right1">
+						<h4>简 介</h4>
+						<p>郑州信盈达电子科技有限公司为深圳信盈达旗下子公司，专注于嵌入式的开发及python人工智能的实训项目；<br><br><br></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+{#			<div class="work-2">#}
+{#			<div class="work-info">#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6 work-right work-right2">#}
+{#				</div>#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6  work-left work-left2 ">#}
+{#					<div class="col-md-6  col-sm-6 col-xs-6 work1">#}
+{#						<h4>Lorem ipsum</h4>#}
+{#						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p></div>#}
+{#					<div class="col-md-6  col-sm-6 col-xs-6  work2">#}
+{#						<h5> Company Name</h5>#}
+{#						<span></span>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#			<div class="work-info">#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6 ">#}
+{#				</div>#}
+{#				<div class="col-md-6  col-sm-6 col-xs-6 work-right">#}
+{#					<div class="col-md-6  col-sm-6 col-xs-6 work2">#}
+{#						<span></span>#}
+{#						<h5>Company Name</h5>#}
+{#					</div>#}
+{#					<div class="col-md-6  col-sm-6 col-xs-6 work-right1">#}
+{#						<h4>Lorem ipsum</h4>#}
+{#						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p> </div>#}
+{#				</div>#}
+{#				<div class="clearfix"> </div>#}
+{#			</div>#}
+{#			<span class="edu-circle"></span>#}
+{#		</div>#}
+	</div>
+</div>
+<!--//work-experience-->
+<!-- contact -->
+<div id="contact" class="w3_agileits-contact">
+		<div class="container">
+				<h3 class="w3l-heading">联    系</h3>
+				<div class="w3_agile-contact  jarallax text-center">
+					<form action="#" method="get">
+						<input type="text" placeholder="姓 名" name="name" class="name" required>
+						<input type="text" placeholder="电话号码" name="phone" class="name" required>
+						<input type="email" placeholder="邮箱地址" name="email" class="email" required>
+						<textarea name="message" placeholder="信息"></textarea>
+						<input type="submit" value="发送">
+					</form>
+					<h4>to</h4>
+					<a href="#">hhrsain@sina.com</a>
+					<h5>+86 15978554102</h5>
+					<ul class="social-icons-w3_agile">
+						<li><a href="#" class="fa fa-facebook icon icon-border facebook"> </a></li>
+						<li><a href="#" class="fa fa-twitter icon icon-border twitter"> </a></li>
+						<li><a href="#" class="fa fa-google-plus icon icon-border googleplus"> </a></li>
+					</ul>
+				</div>
+		</div>
+</div>
+
+<div class="portfolio" id="essays">
+    <div class="port-head">
+        <h3 class="w3l-heading"><a href="/My_essays/" style="color: black">博主随笔</a></h3>
+    </div>
+</div>
+
+<div class="portfolio" id="readbook">
+    <div class="port-head">
+        <h3 class="w3l-heading"><a href="/Personal_resume/homepage/" style="color: black">开心阅读</a></h3>
+    </div>
+</div>
+<!-- footer -->
+<div class="agileits_w3layouts-footer text-center">
+	<div class="container">
+		<p>版权 &copy; 2019.黄浩然的个人博客 - <a href="http://www.cssmoban.com/" target="_blank" title="GitHub 地址">GitHub 地址</a></p>
+	</div>
+</div>
+<!-- //footer -->
+<!-- //contact -->
+<!-- PopUp-Box-JavaScript -->
+		<script src="{% static 'resume/js/jquery.chocolat.js' %}"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.filtr-item a').Chocolat();
+			});
+		</script>
+	<!-- //PopUp-Box-JavaScript -->
+	<!-- fliter-JavaScript -->
+		<script src="{% static 'resume/js/jquery.filterizr.js' %}"></script>
+		<script src="{% static 'resume/js/controls.js' %}"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.filtr-container').filterizr();
+			});
+		</script>
+	<!-- //fliter-JavaScript -->
+<script src="{% static 'resume/js/jarallax.js' %}"></script>
+<script src="{% static 'resume/js/SmoothScroll.min.js' %}"></script>
+<script type="text/javascript">
+	/* init Jarallax */
+	$('.jarallax').jarallax({
+		speed: 0.5,
+		imgWidth: 1366,
+		imgHeight: 768
+	})
+</script>
+<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="{% static 'resume/js/easing.js' %}"></script>
+<!-- //here ends scrolling icon -->
+
+
+</body>
+</html>
