@@ -34,7 +34,7 @@ def down_file1(request):
 
 class login(views.View):
     def get(self, request, *args, **kwargs):
-        return render(request, "Personal_resume/login.html")
+        return render(request, "Personal_resume/standby/login.html")
 
     def post(self, request, *args, **kwargs):
 
@@ -43,7 +43,7 @@ class login(views.View):
 
         usernamesgin = hashUser(loginUsername)
         t_token = hashUser(datetime.datetime.now().strftime("%Y-%m-%d"))
-        response = HttpResponseRedirect('/my_personel_resume/')
+        response = HttpResponseRedirect('/resume/my_personel_resume/')
 
         response.set_cookie('loginUsername', loginUsername)
         response.set_cookie('loginPassword', loginPassword)
@@ -63,19 +63,11 @@ def hashUser(username):
 
 
 
-class homepage(views.View):
+class fantasy(views.View):
     def get(self, request, *args, **kwargs):
-
-        return render(request, "Personal_resume/homepage.html")
-
+        return render(request, "Personal_resume/fantasy.html")
 
 
-class chart(views.View):
-    def get(self, request, *args, **kwargs):
-        return render(request, "Personal_resume/charts.html")
-
-
-#personalBlog
 
 class Get_catalogue(views.View):
     def get(self, request, *args, **kwargs):
@@ -144,7 +136,7 @@ class GetCatalogue(views.View):
         bookUrl = request.POST.get("bookUrl", None)
         bookname = request.POST.get("bookname", None)
         bookNum = bookUrl.split('/')[-2]
-        BookData = Catalogue.xiaoshuoxiazai().selectbookdate(bookNum)
+        BookData, category = Catalogue.xiaoshuoxiazai().selectbookdate(bookNum)
 
         jsonDate = {}
         DateList = []
@@ -158,6 +150,7 @@ class GetCatalogue(views.View):
         jsonList = []
         jsonList.append(bookname)
         jsonList.append(jsonDate)
+        jsonList.append(category[0][0])
         return HttpResponse(json.dumps(jsonList))
 
 
@@ -166,10 +159,11 @@ class Access_to_the_body(views.View):
     def post(self, request, *args, **kwargs):
         bookUrl = request.POST.get("bookUrl", None)
         bookname = request.POST.get("bookname", None)
-        contentText = Catalogue.xiaoshuoxiazai().GetContent(bookUrl)
+        contentText, category = Catalogue.xiaoshuoxiazai().GetContent(bookUrl)
         contentlist=[]
         contentlist.append(str(bookname).split(" ")[1])
         contentlist.append(contentText)
+        contentlist.append(category)
         return HttpResponse(json.dumps(contentlist))
 
 
@@ -177,7 +171,7 @@ class Access_to_the_body(views.View):
 
 class cataloguepage(views.View):
     def get(self, request, *args, **kwargs):
-        return render(request, "Personal_resume/catalogue.html")
+        return render(request, "Personal_resume/standby/catalogue.html")
 
     def post(self, request, *args, **kwargs):
         bookUrl = request.POST.get("bookUrl", None)
@@ -188,14 +182,40 @@ class cataloguepage(views.View):
 
 
 
+class Coatard(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "Personal_resume/Coatard.html")
+
+
+
+class metropolis(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "Personal_resume/metropolis.html")
+
+
+
+class traversing(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "Personal_resume/traversing.html")
+
+
+
+class Netgame(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "Personal_resume/Netgame.html")
+
+
+
+class sciencefiction(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "Personal_resume/sciencefiction.html")
+
+
+
+
 class contentpage(views.View):
     def get(self, request, *args, **kwargs):
         return render(request, "Personal_resume/contentpage.html")
-
-
-
-
-
 
 
 

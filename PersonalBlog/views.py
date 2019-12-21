@@ -13,10 +13,26 @@ class index(views.View):
 
 
 
-
-class single(views.View):
+class list(views.View):
     def get(self, request, *args, **kwargs):
-        return render(request, "PersonalBlog/single.html")
+        return render(request, "PersonalBlog/list.html")
+
+
+
+
+class show(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "PersonalBlog/show.html")
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -8,7 +8,8 @@ window.onload = function(){
 
 function bookcraw() {
     var xhr=new XMLHttpRequest();
-    xhr.open('GET', "http://127.0.0.1:8000/Personal_resume/BookCraw/?channel=1", true);
+    var a = window.location.host;
+    xhr.open('GET', "http://"+a+"/Personal_resume/BookCraw/?channel=1", true);
     xhr.send();
     xhr.onreadystatechange=function(){
         if(xhr.readyState==4 || xhr.readyState==200){
@@ -23,7 +24,8 @@ function bookcraw() {
 
 function getAllBook() {
     var xhr=new XMLHttpRequest();
-    xhr.open('GET', "http://127.0.0.1:8000/Personal_resume/Get_catalogue/?channel=1", true);
+    var a = window.location.host;
+    xhr.open('GET', "http://"+a+"/Personal_resume/Get_catalogue/?channel=1", true);
     xhr.send();
     xhr.onreadystatechange=function(){
         if(xhr.readyState==4 || xhr.readyState==200){
@@ -51,7 +53,8 @@ function getAllBook() {
 
 function transferpage(page) {
     var xhr=new XMLHttpRequest();
-    xhr.open('post', "http://127.0.0.1:8000/Personal_resume/pageination/", true);
+    var b = window.location.host;
+    xhr.open('post', "http://"+b+"/Personal_resume/pageination/", true);
     xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
     var a = "page="+String(page)+"&channel=1";
     xhr.send(a);
@@ -102,7 +105,8 @@ function deltr(){
 
 function stopskip(column) {
     var bookUrl = column.id;
-    window.location.href="http://127.0.0.1:8000/Personal_resume/cataloguepage/?"+bookUrl.substring(21)+"&"+column.text;
+    var a = window.location.host;
+    window.location.href="http://"+a+"/Personal_resume/cataloguepage/?"+bookUrl.substring(21)+"&"+column.text;
 }
 
 

@@ -21,5 +21,6 @@ from PersonalBlog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index.as_view()),
-    path('single/', views.single.as_view()),
+    path('show/', views.show.as_view()),
+    path('list/', views.list.as_view()),
 ]

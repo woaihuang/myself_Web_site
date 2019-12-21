@@ -136,15 +136,6 @@ class xiaoshuoxiazai():
 
 
     def process(self, sectionnum):
-        taobao_con = pymysql.connect(
-            host='120.27.147.99',
-            user="root",
-            password="Root_12root",
-            database="python_taobao_demo",
-            charset='utf8'
-        )
-
-        taobao_cur = taobao_con.cursor()
         section = self.html.xpath('//*[@id="list"]/dl/dd[{}]/a/text()'.format(sectionnum))[0]
         sectionUrl = self.html.xpath('//*[@id="list"]/dl/dd[{}]/a//@href'.format(sectionnum))[0]
         bookNum = sectionUrl.split('/')[2]
@@ -152,8 +143,8 @@ class xiaoshuoxiazai():
         insertSql = "INSERT INTO ebook.sectionTable (bookNum, sectionName, sectionUrl, sortNum) VALUES({}, '{}', '{}', {})".format(bookNum, section, sectionUrl, sectionnum)
 
         try:
-            taobao_cur.execute(insertSql)
-            taobao_con.commit()
+            self.taobao_cur.execute(insertSql)
+            self.taobao_con.commit()
         except Exception as E:
             pass
 
@@ -171,14 +162,25 @@ class xiaoshuoxiazai():
 
 
     def selectbookdate(self, bookNum):
-        print(bookNum)
+
         selectSql = "SELECT sectionName, sectionUrl FROM ebook.sectionTable WHERE bookNum={} ORDER BY sortNum".format(bookNum)
         try:
             self.taobao_cur.execute(selectSql)
         except Exception as E:
             print("查询总页码失败：", E)
 
-        return self.taobao_cur.fetchall()
+        BookData = self.taobao_cur.fetchall()
+
+        categorysql = "SELECT category FROM ebook.xiaoshuotable WHERE bookNumber={}".format(bookNum)
+
+        try:
+            self.taobao_cur.execute(categorysql)
+        except Exception as E:
+            print("查询总页码失败：", E)
+
+        category = self.taobao_cur.fetchall()
+
+        return BookData, category
 
 
 
@@ -210,7 +212,17 @@ class xiaoshuoxiazai():
         for i in content:
             contentText = contentText + i + "\n"
 
-        return contentText
+        bookunm = bookUrl.split('/')[-2]
+        categorysql = "SELECT category FROM ebook.xiaoshuotable WHERE bookNumber={}".format(bookunm)
+
+        try:
+            self.taobao_cur.execute(categorysql)
+        except Exception as E:
+            print("查询总页码失败：", E)
+
+        category = self.taobao_cur.fetchall()
+
+        return contentText, category
 
 
 

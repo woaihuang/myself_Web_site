@@ -11,7 +11,8 @@ window.onload = function(){
 
 function getcata(bookUrl, bookname) {
     var xhr=new XMLHttpRequest();
-    xhr.open('post', "http://127.0.0.1:8000/Personal_resume/cataloguepage/", true);
+    var b = window.location.host;
+    xhr.open('post', "http://"+b+"/Personal_resume/cataloguepage/", true);
     xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
     var a = "bookUrl="+String(bookUrl)+"&bookname="+bookname;
     xhr.send(a);
@@ -29,7 +30,8 @@ function getcata(bookUrl, bookname) {
 
 function GetCatalogue(bookUrl, bookname) {
     var xhr=new XMLHttpRequest();
-    xhr.open('post', "http://127.0.0.1:8000/Personal_resume/GetCatalogue/", true);
+    var b = window.location.host;
+    xhr.open('post', "http://"+b+"/Personal_resume/GetCatalogue/", true);
     xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
     var a = "bookUrl="+String(bookUrl)+"&bookname="+bookname;
     xhr.send(a);
@@ -37,6 +39,7 @@ function GetCatalogue(bookUrl, bookname) {
         if(xhr.readyState==4){
             if(xhr.status==200){
                 JsonDate = eval(xhr.responseText);
+                document.getElementById(JsonDate[2]).className="active";
                 createCatalogue(JsonDate[1]['DateList'], JsonDate[0])
             }
         }
@@ -61,5 +64,6 @@ function createCatalogue(jsondata, bookname) {
 
 function AccessBody(column) {
     var bookUrl = column.id;
-    window.location.href="http://127.0.0.1:8000/Personal_resume/contentpage/?"+bookUrl+"&"+column.text;
+    var b = window.location.host;
+    window.location.href="http://"+b+"/Personal_resume/contentpage/?"+bookUrl+"&"+column.text;
 }
