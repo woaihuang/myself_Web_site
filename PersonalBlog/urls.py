@@ -23,4 +23,5 @@ urlpatterns = [
     path('index/', views.index.as_view()),
     path('show/', views.show.as_view()),
     path('list/', views.list.as_view()),
+    path('contribute/', views.contribute.as_view()),
 ]

@@ -27,6 +27,10 @@ class show(views.View):
 
 
 
+class contribute(views.View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "PersonalBlog/contribute.html")
+
 
 
 
